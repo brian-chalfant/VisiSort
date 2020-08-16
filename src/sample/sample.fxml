@@ -1,25 +1,35 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
-
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.canvas.Canvas?>
-<?import javafx.scene.layout.Pane?>
+<?import sample.BetterPane?>
+<?import javafx.scene.control.Slider?>
 <BorderPane fx:controller="sample.Controller"
             xmlns:fx="http://javafx.com/fxml">
     <top>
-        <HBox>
-            <Button onAction="#bubbleSort"/>
-            <Button/>
-            <Button/>
-            <Button/>
+        <HBox alignment="CENTER">
+            <Button fx:id="btnreset" text="Reset" onAction="#shuffle"/>
+            <Button fx:id="btnbubble" text="BubbleSort"/>
+            <Button fx:id="btninsert" text="Insertion Sort"/>
+            <Button fx:id="btnquick" text="QuickSort"/>
         </HBox>
     </top>
     <center>
-        <Pane fx:id="viewPane">
+        <BetterPane fx:id="viewPane">
 
-        </Pane>
+        </BetterPane>
     </center>
+    <bottom>
+        <HBox alignment="CENTER">
+            <Label text="Fast"/>
+            <Slider fx:id="sliderSpeed"
+                    blockIncrement="4.0"
+                    cache="true"
+                    max="1000.0"
+                    min="10.0"
+                    value="250.0"
+            />
+            <Label text="Slow"/>
+        </HBox>
+    </bottom>
 </BorderPane>
